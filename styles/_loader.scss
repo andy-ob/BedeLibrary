@@ -1,0 +1,43 @@
+.loader {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.load-indicator {
+  height: 10px;
+  position: relative;
+
+  .ball {
+    background: #ccc;
+    border-radius: 50%;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0px;
+    width: 10px;
+  }
+  
+  @for $i from 1 through 3 {
+    .ball:nth-child(#{$i}) {
+      animation: bounce 1s .1s * $i ease infinite;
+      left: 12px * $i - 10;
+    }
+  }
+}
+
+@keyframes bounce {
+  50% {
+    opacity: .75;
+    transform: translateY(-5px);
+  }
+  
+  80% {
+    transform: translateY(0);
+  }
+}

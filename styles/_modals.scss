@@ -1,0 +1,60 @@
+.modal {
+  background: #fff;
+  left: 50%;
+  max-width: 40rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: 2rem 0 0;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(155%);
+  transition: transform .3s cubic-bezier(0.25, 0.1, 0.35, 1.24), opacity .3s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+
+  &.modal-show {
+    opacity: 1;
+    transition: transform .3s cubic-bezier(0.25, 0.1, 0.35, 1.24), opacity .3s ease;
+    transform: translateX(-50%) translateY(-50%);
+    visibility: visible;
+  }
+
+  .modal-form {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+
+  .modal-loading {
+    transform: translateX(100%);
+  }
+
+  .modal-success {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    width: 100%;
+  }
+
+  .modal-spaced-header,
+  .modal-spaced-section {
+    margin-bottom: 2rem;
+  }
+
+  .modal-spaced-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .success-check {
+    border: 4px solid limegreen;
+    border-radius: 50%;
+  }
+}

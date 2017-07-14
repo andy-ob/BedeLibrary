@@ -1,0 +1,26 @@
+button {
+  background: none;
+  border: 1px solid lighten(#db1018, 30%);
+  border-radius: 2rem;
+  cursor: pointer;
+  min-width: 10rem;
+  padding: 1rem;
+}
+
+.modal-btn {
+  background: #e2e2e2;
+  border: 0;
+  border-radius: 0;
+  flex: 1;
+  font-size: 1.4rem;
+  padding: 1.5rem 1rem;
+}
+
+.primary-btn {
+  background: limegreen;
+  color: #fff;
+}
+
+.secondary-btn {
+
+}

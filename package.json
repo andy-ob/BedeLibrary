@@ -1,0 +1,37 @@
+{
+  "name": "bedelibrary",
+  "version": "0.0.0",
+  "description": "Bede Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "testing testing",
+    "serve": "browser-sync start --server --no-open --files 'index.html, dist/css/*.css, dist/scripts/bundle.js'",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers 'last 1 version' -r dist/css/*",
+    "sass": "node-sass --output-style compressed --source-map-embed styles/main.scss -o dist/css",
+    "styles": "npm run sass && npm run autoprefixer",
+    "babel": "mkdir -p dist/scripts && browserify scripts/main.js -t babelify -o dist/scripts/bundle.js --debug",
+    "uglify": "uglifyjs dist/scripts/bundle.js -m -c -o dist/scripts/bundle.min.js",
+    "scripts": "npm run babel && npm run uglify",
+    "watch:styles": "onchange 'styles/*.scss' -- npm run styles",
+    "watch:scripts": "onchange 'scripts/**.js' -- npm run scripts",
+    "watch:all": "npm run build && parallelshell 'npm run serve' 'npm run watch:styles' 'npm run watch:scripts'",
+    "build": "parallelshell 'npm run styles' 'npm run scripts'"
+  },
+  "author": "Andy O'Brien",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-cli": "^6.18.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.2",
+    "browserify": "^13.1.1",
+    "node-sass": "^3.13.0",
+    "onchange": "^3.0.2",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.6.0",
+    "uglify-js": "^2.7.5"
+  },
+  "dependencies": {}
+}

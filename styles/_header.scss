@@ -1,0 +1,17 @@
+.site-header {
+  align-items: center;
+  box-shadow: 0 0 5px 0 #aaa;
+  display: flex;
+  padding: 0 1rem;
+
+  .search-field {
+    flex: .5 1 auto;
+    margin: 0 2rem 0 auto;
+    padding: 1rem;
+  }
+
+  .header-logo {
+    max-width: 150px;
+    width: 25%;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb-base",
+  "globals": {
+    "document": true,
+    "fetch": true
+  },
+  "rules": {
+    'no-underscore-dangle': [0],
+    'no-new': [0],
+    'no-param-reassign': ['error', {
+      props: false
+    }],
+    'max-len': [2, 120, 2, {
+      ignoreUrls: true,
+      ignoreComments: false
+    }],
+    'comma-dangle': [2, 'never'],
+    'no-restricted-syntax': [0]
+  }
+}

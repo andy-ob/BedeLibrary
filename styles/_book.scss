@@ -1,0 +1,23 @@
+.book {
+  position: relative;
+
+  .book-cover-img {
+    width: 100%;
+  }
+
+  .img-load-overlay {
+    background: #eabdbd;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: opacity .2s ease, visibility 0s .2s ease;
+    width: 100%;
+    visibility: visible;
+
+    &.loaded {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

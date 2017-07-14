@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bede Library</title>
+
+  <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <img class="header-logo" src="http://bedegaming.com/wp-content/uploads/2015/11/bede-logo1.png" alt="Bedegaming Logo">
+    <input class="search-field" type="text" placeholder="Type to search...">
+    <button class="add-book-btn" data-trigger="modal" data-target-modal="book-add-modal">Add</button>
+  </header>
+
+  <div class="overlay" data-id="overlay"></div>
+
+  <main data-id="bookcase">
+    <div class="loader" data-id="loader">
+      <div class="load-indicator">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </div>
+    </div>
+
+    <template id="book" data-container="bookcase">
+      <div class="book" data-id="book">
+        <img class="book-cover-img book-cover-loading" data-id="book-cover-img" data-preload="true" src="" alt="">
+        <div class="img-load-overlay" data-id="img-load-overlay"></div>
+      </div>
+    </template>
+  </main>
+
+  <div class="modal book-add-modal" data-id="book-add-modal">
+    <div class="modal-form">
+      <header class="modal-spaced-header">
+        <svg fill="#f78d91" height="72" viewBox="0 0 24 24" width="72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-74 29h48v48h-48V29zM0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none"/>
+          <path d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z"/>
+        </svg>
+      </header>
+
+      <section class="modal-spaced-section">
+        <p>Add book to library</p>
+
+        <form class="add-book-form" data-id="add-book" action="https://api.mlab.com/api/1/databases/bedelibrary/collections/books?apiKey=3TYf9F5FFOAF84bbLGtMNPpOiRpSq9oN&" method="post">
+          <input type="text" id="bookTitle" name="title" placeholder="Title">
+        
+          <input type="text" id="bookISBN" name="isbn" placeholder="ISBN">
+        
+          <input type="text" id="bookAuthor" name="author" placeholder="Author">
+        
+          <input type="text" id="bookImg" name="cover" placeholder="Cover image">
+        
+          <button data-submit>Submit</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="modal-loading">
+      <div class="loader" data-id="loader">
+        <div class="load-indicator">
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-success">
+      <header class="modal-spaced-header">
+        <svg class="success-check" fill="limegreen" height="72" viewBox="0 0 24 24" width="72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+      </header>
+
+      <section class="modal-spaced-section">
+        <p>You're book has been added!</p>
+      </section>
+
+      <footer class="modal-spaced-footer">
+        <button class="modal-btn primary-btn">Add another</button>
+        <button class="modal-btn secondary-btn" data-modal-close>Close</button>
+      </footer>
+    </div>
+
+    <button data-modal-close>x</button>
+  </div>
+
+  <script src="dist/scripts/bundle.js"></script>
+</body>
+</html>

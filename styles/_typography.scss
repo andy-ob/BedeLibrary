@@ -1,0 +1,22 @@
+/**************************************************
+  Typography styling
+**************************************************/
+
+$fontbase: 16;
+$line-height-base: 26; 
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Muli, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: $line-height-base/$fontbase;
+}
+
+@for $i from 1 through 6 {
+  #{h + $i} {
+    font-size: (7 - $i) + rem;
+  }
+}

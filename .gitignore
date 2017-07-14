@@ -1,0 +1,8 @@
+# Mac Files
+*.DS_Store
+*/.DS_Store
+
+# Others
+node_modules/
+dist
+yarn-error.log
